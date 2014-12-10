@@ -3,17 +3,16 @@ package org.bongiorno.dto.typeadapters.joda;
 import org.joda.time.LocalTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class LocalTimeAdapter extends XmlAdapter<String, LocalTime> {
 
-    public static final String DEFAULT_FORMAT = "HH:mm:ss";
-
     private DateTimeFormatter formatter;
 
     public LocalTimeAdapter(){
-        this(DEFAULT_FORMAT);
+        formatter = ISODateTimeFormat.localTimeParser();
     }
 
     public LocalTimeAdapter(String format) {

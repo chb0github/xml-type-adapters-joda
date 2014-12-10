@@ -9,8 +9,8 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Webservices Core</name>
-    <description>Core classes to be shared amongst all webservice implementations</description>
+    <name>Jodatime XML type adapters</name>
+    <description>Adapters for unmarshalling joda time types</description>
     <url>https://github.com/chb0github/</url>
 
     <licenses>

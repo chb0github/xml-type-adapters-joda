@@ -3,18 +3,18 @@ package org.bongiorno.dto.typeadapters.joda;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate>{
 
-
-    public static final String DEFAULT_FORMAT = "MM/dd/yyyy";
+    public static final String DEFAULT_FORMAT = "yyyy-MM-dd";
 
     private DateTimeFormatter formatter;
 
     public LocalDateAdapter() {
-        this(DEFAULT_FORMAT);
+        formatter = DateTimeFormat.forPattern(DEFAULT_FORMAT);
     }
 
     public LocalDateAdapter(String format) {

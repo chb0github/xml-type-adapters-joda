@@ -47,7 +47,7 @@ public class AdapterTests {
 
     @Test
     public void testISOLocalDateAdapter() throws Exception {
-        ISOLocalDateAdapter adapter = new ISOLocalDateAdapter();
+        LocalDateAdapter adapter = new LocalDateAdapter();
 
         LocalDate expectedDate = new LocalDate(1976, 9, 10);
         String string = "1976-09-10";
@@ -58,7 +58,7 @@ public class AdapterTests {
 
     @Test
     public void testISODateTimeAdapter() throws Exception {
-        ISODateTimeAdapter adapter = new ISODateTimeAdapter();
+        DateTimeAdapter adapter = new DateTimeAdapter();
 
         DateTime expectedDate = new DateTime(1976, 9, 10, 9, 17);
         String string = "1976-09-10T09:17:00.000-07:00";

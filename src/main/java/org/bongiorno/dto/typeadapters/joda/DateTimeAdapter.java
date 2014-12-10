@@ -4,6 +4,7 @@ import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
@@ -15,11 +16,17 @@ public class DateTimeAdapter extends XmlAdapter<String, DateTime>  {
     private DateTimeZone timeZone;
 
     public DateTimeAdapter(){
+        formatter = ISODateTimeFormat.dateTime();
     }
 
     public DateTimeAdapter(String format, String timeZone) {
         formatter = DateTimeFormat.forPattern(format);
         this.timeZone = DateTimeZone.forID(timeZone);
+    }
+
+    public DateTimeAdapter(String format) {
+        formatter = DateTimeFormat.forPattern(format);
+        this.timeZone = DateTimeZone.getDefault();
     }
 
     @Override
